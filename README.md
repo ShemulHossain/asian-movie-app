@@ -53,7 +53,7 @@ When launching the application you might have to close it and open it again (may
 This is due to the backend being put to sleep after a period of inactivity.
 
 ### APK Location
-asian-movie-app\android-app\app\build\outputs\apk\debug
+asian-movie-app\apk\app-debug.apk
 
 ### 👥 Contributors
 • Shemul Hossain - X00192450

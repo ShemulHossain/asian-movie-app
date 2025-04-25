@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Asian Movie App</string>
+    <string name="title">title</string>
+    <string name="add_movie">Add Movie</string>
+    <string name="edit_movie">Edit Movie</string>
+    <string name="delete_movie">Delete Movie</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Rating</string>
+    <string name="release_date">Release Date</string>
+    <string name="release_format">Release Date (e.g. 2025-01-01)</string>
+    <string name="image_url">Image URL</string>
+    <string name="submit">Submit</string>
+    <string name="description">Description</string>
+    <string name="review">Review</string>
+    <string name="leave_review">Leave a Review</string>
+    <string name="cancel">Cancel</string>
+    <string name="reviewer_name">Reviewer Name</string>
+    <string name="rating_input">Rating (1–10)</string>
+    <string name="review_input">Write your review</string>
+    <string name="search_by_title">Search by title</string>
+    <string name="filter_by_genre">Filter by Genre</string>
+    <string name="sort_by">Sort by</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="latest">Latest</string>
+    <string name="clear">Clear</string>
+    <string name="random_movie">Random Movie</string>
+    <string name="load_more">Load More</string>
+    <string name="failed_to_load">Failed to load movies.</string>
 </resources>

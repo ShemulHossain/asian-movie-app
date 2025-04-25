@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{457820CD-C39D-4847-9B26-7AD9FD83EDEC}|..\\AsianMovieApi.Tests\\AsianMovieApi.Tests.csproj|c:\\users\\shemu\\asian-movie-app\\web-api\\asianmovieapi.tests\\moviescontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|c:\\users\\shemu\\asian-movie-app\\web-api\\asianmovieapi\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|solutionrelative:controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|c:\\users\\shemu\\asian-movie-app\\web-api\\asianmovieapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|c:\\users\\shemu\\asian-movie-app\\web-api\\asianmovieapi\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|solutionrelative:models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|c:\\users\\shemu\\asian-movie-app\\web-api\\asianmovieapi\\migrations\\20250424053702_addmoviedescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B01BC77B-59B2-4EF3-9E54-AAF8CAB9B29B}|AsianMovieApi.csproj|solutionrelative:migrations\\20250424053702_addmoviedescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MoviesControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi.Tests\\MoviesControllerTests.cs",
+              "RelativeDocumentMoniker": "..\\AsianMovieApi.Tests\\MoviesControllerTests.cs",
+              "ToolTip": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi.Tests\\MoviesControllerTests.cs",
+              "RelativeToolTip": "..\\AsianMovieApi.Tests\\MoviesControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T04:52:39.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Controllers\\MoviesController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T03:51:38.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250424053702_AddMovieDescription.cs",
+              "DocumentMoniker": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\Migrations\\20250424053702_AddMovieDescription.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250424053702_AddMovieDescription.cs",
+              "ToolTip": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\Migrations\\20250424053702_AddMovieDescription.cs",
+              "RelativeToolTip": "Migrations\\20250424053702_AddMovieDescription.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T05:37:02.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "Models\\Movie.cs",
+              "ToolTip": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\Models\\Movie.cs",
+              "RelativeToolTip": "Models\\Movie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T05:30:05.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Shemu\\asian-movie-app\\web-api\\AsianMovieApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T04:00:56.608Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

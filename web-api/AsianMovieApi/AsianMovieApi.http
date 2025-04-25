@@ -1,0 +1,6 @@
+@AsianMovieApi_HostAddress = http://localhost:5278
+
+GET {{AsianMovieApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -3,6 +3,7 @@ package com.example.asianmovieapp
 import retrofit2.http.GET
 import retrofit2.http.*
 import retrofit2.Response
+import retrofit2.http.Path
 
 interface MovieApiService {
 
@@ -67,5 +68,7 @@ interface MovieApiService {
     @GET("api/Movies/random")
     suspend fun getRandomMovie(): Response<Movie>
 
+    @GET("api/Movies/{id}/average-rating")
+    suspend fun getAverageRating(@Path("id") movieId: Int): Double
 
 }

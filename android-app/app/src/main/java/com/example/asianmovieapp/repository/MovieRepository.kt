@@ -5,6 +5,8 @@ import com.example.asianmovieapp.Review
 import com.example.asianmovieapp.MovieApiService
 import com.example.asianmovieapp.RetrofitInstance
 import retrofit2.Response
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class MovieRepository {
     private val apiService: MovieApiService = RetrofitInstance.api
@@ -137,4 +139,14 @@ class MovieRepository {
         }
     }
 
+    suspend fun fetchAverageRating(movieId: Int): Double? {
+        return try {
+            withContext(Dispatchers.IO) {
+                apiService.getAverageRating(movieId)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null // or you can throw e depending on how you handle errors
+        }
+    }
 }

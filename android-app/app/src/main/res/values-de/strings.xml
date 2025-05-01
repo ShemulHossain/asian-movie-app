@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Asiatische Film-Anwendung</string>
+    <string name="title">Titel</string>
+    <string name="add_movie">Film hinzufügen</string>
+    <string name="edit_movie">Film bearbeiten</string>
+    <string name="delete_movie">Film löschen</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Bewertung</string>
+    <string name="release_date">Erscheinungsdatum</string>
+    <string name="release_format">Erscheinungsdatum (z. B. 2025-01-01)</string>
+    <string name="image_url">Bild-URL</string>
+    <string name="submit">Einreichen</string>
+    <string name="description">Beschreibung</string>
+    <string name="review">Rezension</string>
+    <string name="leave_review">Rezension hinterlassen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="reviewer_name">Name des Rezensenten</string>
+    <string name="rating_input">Bewertung (1–10)</string>
+    <string name="review_input">Schreiben Sie Ihre Rezension</string>
+    <string name="search_by_title">Nach Titel suchen</string>
+    <string name="filter_by_genre">Nach Genre filtern</string>
+    <string name="sort_by">Sortieren nach</string>
+    <string name="top_rated">Höchstbewertet</string>
+    <string name="latest">Neueste</string>
+    <string name="clear">Zurücksetzen</string>
+    <string name="random_movie">Zufälliger Film</string>
+    <string name="load_more">Mehr laden</string>
+    <string name="failed_to_load">Fehler beim Laden der Filme.</string>
+</resources>

@@ -5,10 +5,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.animation.animateContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.*
@@ -16,6 +21,8 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -86,7 +93,7 @@ class MainActivity : ComponentActivity() {
                         var searchQuery by rememberSaveable { mutableStateOf("") }
                         var selectedGenre by rememberSaveable { mutableStateOf("All") }
                         var selectedSort by rememberSaveable { mutableStateOf("None") }
-                        val genreOptions = listOf("All", "Action", "Comedy", "Anime", "Drama", "Horror")
+                        val genreOptions = listOf("All", "Action", "Comedy", "Anime", "Drama", "Horror", "Romance")
                         val sortOptions = listOf("None", "Rating", "Release Date")
                         var filterMode by rememberSaveable { mutableStateOf("Normal") }
 
@@ -180,7 +187,10 @@ class MainActivity : ComponentActivity() {
                                                     .testTag("SearchInput"),
                                             )
 
-                                            // Filters
+                                            val buttonSize = Modifier
+                                                .height(55.dp)
+                                                .width(100.dp) // adjust width as needed
+
                                             FlowRow(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
@@ -188,43 +198,59 @@ class MainActivity : ComponentActivity() {
                                                 mainAxisSpacing = 12.dp,
                                                 crossAxisSpacing = 12.dp
                                             ) {
-                                                DropdownMenuBox(
-                                                    label = stringResource(R.string.filter_by_genre),
-                                                    options = genreOptions,
-                                                    selectedOption = selectedGenre,
-                                                    onOptionSelected = { selectedGenre = it }
-                                                )
+                                                Box(modifier = Modifier.height(56.dp)) {
+                                                    DropdownMenuBox(
+                                                        label = stringResource(R.string.filter_by_genre),
+                                                        options = genreOptions,
+                                                        selectedOption = selectedGenre,
+                                                        onOptionSelected = { selectedGenre = it }
+                                                    )
+                                                }
 
-                                                DropdownMenuBox(
-                                                    label = stringResource(R.string.sort_by),
-                                                    options = sortOptions,
-                                                    selectedOption = selectedSort,
-                                                    onOptionSelected = { selectedSort = it }
-                                                )
+                                                Box(modifier = Modifier.height(56.dp)) {
+                                                    DropdownMenuBox(
+                                                        label = stringResource(R.string.sort_by),
+                                                        options = sortOptions,
+                                                        selectedOption = selectedSort,
+                                                        onOptionSelected = { selectedSort = it }
+                                                    )
+                                                }
 
-                                                Button(onClick = { filterMode = "TopRated" },modifier = Modifier.testTag("TopRatedButton")) {
+                                                Button(
+                                                    onClick = { filterMode = "TopRated" },
+                                                    modifier = buttonSize.testTag("TopRatedButton")
+                                                ) {
                                                     Text(stringResource(R.string.top_rated))
                                                 }
 
-                                                Button(onClick = { filterMode = "Latest" },modifier = Modifier.testTag("LatestButton")) {
+                                                Button(
+                                                    onClick = { filterMode = "Latest" },
+                                                    modifier = buttonSize.testTag("LatestButton")
+                                                ) {
                                                     Text(stringResource(R.string.latest))
                                                 }
 
-                                                Button(onClick = {
-                                                    selectedGenre = "All"
-                                                    selectedSort = "None"
-                                                    searchQuery = ""
-                                                    filterMode = "Normal"
-                                                }, modifier = Modifier.testTag("ClearButton")) {
+                                                OutlinedButton(
+                                                    onClick = {
+                                                        selectedGenre = "All"
+                                                        selectedSort = "None"
+                                                        searchQuery = ""
+                                                        filterMode = "Normal"
+                                                    },
+                                                    modifier = buttonSize.testTag("ClearButton")
+                                                ) {
                                                     Text(stringResource(R.string.clear))
                                                 }
 
-                                                Button(onClick = {
-                                                    viewModel.loadRandomMovie { randomMovie ->
-                                                        selectedMovie = randomMovie
-                                                        navController.navigate("movie_details/${randomMovie.id}")
-                                                    }
-                                                }, modifier = Modifier.testTag("RandomMovieButton")) {
+                                                Button(
+                                                    onClick = {
+                                                        viewModel.loadRandomMovie { randomMovie ->
+                                                            selectedMovie = randomMovie
+                                                            navController.navigate("movie_details/${randomMovie.id}")
+                                                        }
+                                                    },
+                                                    modifier = buttonSize.testTag("RandomMovieButton")
+                                                ) {
                                                     Text(stringResource(R.string.random_movie))
                                                 }
                                             }
@@ -382,31 +408,52 @@ fun MovieList(
                     .fillMaxWidth()
                     .clickable { onSelect(movie) }
                     .testTag("MovieCard_${movie.id}"),
-                elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+                shape = RoundedCornerShape(16.dp),
+                elevation = CardDefaults.cardElevation(8.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
             ) {
-                Column(modifier = Modifier.padding(16.dp)) {
+                Row(modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxWidth()
+                    .animateContentSize()) {
                     Image(
                         painter = rememberAsyncImagePainter(movie.imageUrl),
                         contentDescription = "Movie Poster",
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .height(200.dp)
+                            .size(100.dp)
+                            .clip(RoundedCornerShape(12.dp))
                     )
 
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.width(16.dp))
 
-                    Text(movie.title, style = MaterialTheme.typography.headlineSmall)
-                    Text("Genre: ${movie.genre}")
-                    Text("Release: ${movie.releaseDate.take(10)}")
-                    Text("Rating: ⭐ ${movie.rating}")
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = movie.title,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text("\uD83C\uDFAC ${movie.genre}", style = MaterialTheme.typography.bodyMedium)
+                        Text("\uD83D\uDCC5 ${movie.releaseDate.take(10)}", style = MaterialTheme.typography.bodySmall)
+                        Text("⭐ ${movie.rating}", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
 
-                    Spacer(modifier = Modifier.height(8.dp))
-
+                        Row(
+                            horizontalArrangement = Arrangement.End,
+                            modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                        ) {
+                            TextButton(onClick = { onEdit(movie) }) {
+                                Text("Edit")
+                            }
+                            TextButton(onClick = { onDelete(movie) }) {
+                                Text("Delete")
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
+
 
 @Composable
 fun DropdownMenuBox(

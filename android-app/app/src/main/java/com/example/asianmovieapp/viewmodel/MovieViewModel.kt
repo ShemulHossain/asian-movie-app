@@ -2,6 +2,9 @@ package com.example.asianmovieapp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import kotlinx.coroutines.launch
 import com.example.asianmovieapp.Movie
 import com.example.asianmovieapp.Review
 import com.example.asianmovieapp.repository.MovieRepository
@@ -286,5 +289,13 @@ class MovieViewModel : ViewModel() {
         }
     }
 
+    private val _averageRating = MutableStateFlow<Double?>(null)
+    val averageRating: StateFlow<Double?> = _averageRating
 
+    fun loadAverageRating(movieId: Int) {
+        viewModelScope.launch {
+            val rating = repository.fetchAverageRating(movieId)
+            _averageRating.value = rating
+        }
+    }
 }

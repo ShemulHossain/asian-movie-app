@@ -9,11 +9,13 @@ backed by a cloud-hosted SQL database.
 ## ✨ Features
 
 - View all available movies with details
+- View all average user ratings in each movie
 - Add, edit, and delete movies
 - Leave, edit, and delete reviews
 - Fetch a random movie suggestion
 - Filter and sort by genre, rating, or release date
-- Fully internationalized (e.g., English + French)
+- Fully internationalized (e.g., English + French + German)
+- Switch into Dark Mode
 - Responsive UI for phones and tablets
 - End-to-end tested with Espresso
 
@@ -57,3 +59,4 @@ asian-movie-app\apk\app-debug.apk
 
 ### 👥 Contributors
 • Shemul Hossain - X00192450
+- Patricia Torres - X00188069

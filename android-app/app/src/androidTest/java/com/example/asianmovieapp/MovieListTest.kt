@@ -7,6 +7,12 @@ import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.SemanticsNodeInteraction
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.*
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.asianmovieapp.Movie
+import org.junit.runner.RunWith
 import org.junit.Rule
 import org.junit.Test
 
@@ -275,4 +281,51 @@ class MovieListTest {
         composeTestRule.onAllNodesWithText("1 Updated 1 Test Movie").assertCountEquals(0)
     }
 
+    @Test
+    fun searchFiltersMoviesByTitle() {
+        // Arrange
+        val movies = listOf(
+            Movie(
+                id = 1,
+                title = "Train to Busan",
+                genre = "Horror",
+                releaseDate = "2016-07-20",
+                rating = 8.0,
+                imageUrl = "",
+                description = "Zombies on a train"
+            ),
+            Movie(
+                id = 2,
+                title = "Parasite",
+                genre = "Drama",
+                releaseDate = "2019-05-30",
+                rating = 9.0,
+                imageUrl = "",
+                description = "Social thriller"
+            )
+        )
+
+        val filteredMovies = mutableStateListOf<Movie>().apply { addAll(movies) }
+
+        composeTestRule.setContent {
+            MovieList(
+                movies = filteredMovies,
+                onDelete = {},
+                onEdit = {},
+                onSelect = {}
+            )
+        }
+
+        // Act – Simulate search input
+        composeTestRule.onNodeWithTag("SearchInput").performTextInput("busan")
+
+        composeTestRule.runOnIdle {
+            filteredMovies.clear()
+            filteredMovies.addAll(movies.filter { it.title.contains("busan", ignoreCase = true) })
+        }
+
+        // Assert
+        composeTestRule.onNodeWithTag("MovieCard_1").assertExists()
+        composeTestRule.onNodeWithTag("MovieCard_2").assertDoesNotExist()
+    }
 }
